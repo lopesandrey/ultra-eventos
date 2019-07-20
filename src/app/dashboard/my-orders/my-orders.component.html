@@ -1,0 +1,28 @@
+<div class="container top">
+    <div class="d-flex justify-content-center">
+      <h2>Meus pedidos</h2>
+    </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">N° do pedido</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Forma de pagamento</th>
+        <th scope="col">Valor total</th>
+        <th scope="col">Titulo</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order of orders ">
+      <tr>
+        <th scope="row">{{order.id}}</th>
+        <td>{{order.name}}</td>
+        <td>{{order.formPay}}</td>
+        <div *ngFor="let item of items ">
+            <td >{{order.items[item.title]}}</td>
+        </div>
+        <td>{{order.total}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

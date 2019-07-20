@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="order-buy" *ngIf="idOrder === undefined">
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+
+      <h5>Sua Compra</h5>
+      <hr />
+      <div *ngIf="cart.showitems().length; else cartEmpty">
+      <div *ngFor="let item of item " class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+          <div class="form-group col-sm-1">
+            <img [src]="item.img" class="img-fluid">
+          </div>
+          <div class="form-group col-sm-6">
+            {{item.title}}
+            <br />
+            {{item.description}}
+          </div>
+
+         <div>
+            <div class="row">
+              <div class="col">
+                <button (click)="diminuir(item)" type="button" class="btn btn-link">-</button>
+                {{item.qtd}}
+                <button (click)="adicionar(item)" type="button" class="btn btn-link">+</button>
+                <button (click)="excluir(item)" type="button" class="btn btn-link">Excluir</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-sm-3 d-flex justify-content-end">
+            {{item.qtd * item.price | currency: 'BRL'}}
+          </div>
+        </div>
+    <div class="form-row">
+        <div class="form-group col d-flex justify-content-end">
+          <h4>Total do pedido: {{cart.totalCompras() | currency: 'BRL'}}</h4>
+        </div>
+      </div>
+  </div>
+
+  <ng-template #cartEmpty>
+    <div class="form-row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+      <h4>Seu carrinho está vazio!</h4>
+    </div>
+  </ng-template>
+
+
+
+    <div *ngIf="getToken() !== null; else gotologin">
+
+      <h5>Dados de Pagamento</h5>
+      <hr />
+
+      <div class="form-row">
+
+        <div class="form-group col-md-3">
+          <select
+            class="form-control"
+            formControlName="formPay"
+          >
+            <option value="">Selecione uma opção</option>
+            <option value="credito">Cartão de crédito</option>
+          </select>
+
+          <small *ngIf="!form.get('formPay').valid && form.get('formPay').touched" class="form-text text-danger">Forma de pagamento inválida</small>
+        </div>
+      </div>
+
+      <div class="form-row" *ngIf="form.get('formPay').value === 'credito'">
+
+        <div class="form-group col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Número do cartão"
+            autocomplete="off"
+            formControlName="numberCard"
+          >
+
+          <small *ngIf="!form.get('numberCard').valid && form.get('numberCard').touched" class="form-text text-danger">Número inválido</small>
+        </div>
+
+        <div class="form-group col-md-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nome no cartão"
+            autocomplete="off"
+            formControlName="name"
+          >
+
+          <small *ngIf="!form.get('name').valid && form.get('name').touched" class="form-text text-danger">Nome inválido</small>
+
+        </div>
+
+        <div class="form-group col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Código de segurança"
+            autocomplete="off"
+            formControlName="cod"
+          >
+        </div>
+        <small *ngIf="!form.get('name').valid && form.get('name').touched" class="form-text text-danger">Código inválido</small>
+        <div class="form-group col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Data de vencimento"
+            autocomplete="off"
+            formControlName="dateExp"
+          >
+
+        </div>
+
+      </div>
+      <br />
+      <hr />
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg"
+        [disabled]="form.invalid"
+      >Confirmar compra</button>
+    </div>
+    <ng-template #gotologin>
+      <div class="form-row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+        <h5>Faça o login para efetuar suas compras!</h5>
+      </div>
+    </ng-template>
+    </form>
+  </div>
+    <div class="order-buy" *ngIf="idOrder !== undefined">
+      <app-success [idOrder]=idOrder></app-success>
+    </div>
+
+</div>

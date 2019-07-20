@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="evento" *ngIf="evento !== undefined "  >
+    <span *ngIf="isLoading">
+      <img src="../../../assets/spinner.gif" alt="">
+    </span>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img_capa">
+          <img [src]="evento.img" />
+        </div>
+      </div>
+      <div class="row description">
+        <div class="col">
+          <h4>{{evento.title}}</h4>
+          <h6>{{evento.description}}</h6>
+          <h5>{{evento.date}}</h5>
+          <h6>{{evento.place}}</h6>
+          <p>Por apenas</p>
+          <h1 class="text-success">{{evento.price | currency: ['BRL']}}</h1>
+          <button
+            type="button"
+            class="btn btn-danger btn-lg"
+            popover="Seu item foi adicionado ao carrinho!"
+            (click)="additem(evento)"
+
+          >Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+

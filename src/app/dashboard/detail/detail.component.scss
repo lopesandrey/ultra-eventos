@@ -1,0 +1,31 @@
+$box-shadow-sm: 0 0.15rem 1.75rem 0 rgba(#2f3033, .15) !default;
+
+h1 {
+  color: #555
+}
+.container {
+  margin-bottom: 80px;
+}
+.evento {
+  margin-top: 25px
+}
+
+.evento img {
+  width: 400px;
+  box-shadow: 11px 11px 25px -9px rgba(122,122,122,1);
+}
+.col-md-6 {
+  max-width: 100%;
+}
+.row .description {
+  margin: 20px 0;
+}
+
+@media (max-width: 500px)  {
+  .container {
+    margin-top: 80px
+  }
+  .col-md-6 {
+    padding: 0 7px;
+  }
+}

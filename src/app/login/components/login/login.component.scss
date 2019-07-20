@@ -1,0 +1,32 @@
+$box-shadow-sm: 0 0.15rem 1.75rem 0 rgba(#3a3b45, .15) !default;
+
+.card {
+  margin: 60px auto;
+  background: #f8f9fc;
+  box-shadow: $box-shadow-sm
+}
+.card-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+
+}
+.alert {
+  margin-top: 10px;
+  text-align: center;
+}
+.spinner {
+  width: 30px;
+  float: right;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.card-body {
+  text-align: center;
+}
+button.card-link {
+  background: transparent;
+  color: #3344ff;
+  border: none;
+}
