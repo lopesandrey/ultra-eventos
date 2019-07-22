@@ -1,0 +1,281 @@
+{
+  "users": [
+    {
+      "email": "andrey@teste.com",
+      "password": "$2a$10$PBb716yHoIohu2mQw85nce4b0tNPAE220k04jXexJ7lT715ZFJRXG",
+      "name": "Andrey",
+      "cpf": "32165498787",
+      "id": 1
+    },
+    {
+      "email": "teste@teste",
+      "password": "$2a$10$Srwvo0EQ9UzysRzpGPjLVeTAaJkhiFTEdfZEXCZ.L6EoVQC2nU8JW",
+      "name": "Joao da Silva",
+      "cpf": "3216546549878798",
+      "celNumber": "1566998855",
+      "id": 2
+    },
+    {
+      "email": "stefanicrod@teste.com",
+      "password": "$2a$10$1jMhTF3cMc8csEJXdtvVX.CgQEqjAqdbazwgcNYIp/kEeKrxx31HK",
+      "name": "Stefani Cristina Rodrigues",
+      "cpf": "48785233698",
+      "celNumber": "1999958887",
+      "id": 3
+    }
+  ],
+  "event": [
+    {
+      "id": "1",
+      "date": "20/10/2019",
+      "title": "Mandallah",
+      "description": "A melhor festa de música eletrônica do Brasil.",
+      "price": 120,
+      "place": "São João da boa vista",
+      "img": "/assets/evento/1/img1.jpeg"
+    },
+    {
+      "id": "2",
+      "date": "20/10/2019",
+      "title": "Eapic",
+      "description": "A melhor festa de música country do Brasil.",
+      "price": 120,
+      "place": "São João da boa vista",
+      "img": "/assets/evento/2/img1.jpeg"
+    },
+    {
+      "id": "3",
+      "date": "20/10/2019",
+      "title": "Melim",
+      "description": "O trio musical do momento.",
+      "price": 70,
+      "place": "Fortaleza",
+      "img": "/assets/evento/3/img1.jpeg"
+    },
+    {
+      "id": "4",
+      "date": "20/10/2019",
+      "title": "Oktoberfest",
+      "description": "O festival de celebração das tradições germânicas.",
+      "price": 110,
+      "place": "Santa Cruz do Sul",
+      "img": "/assets/evento/4/img1.jpeg"
+    },
+    {
+      "id": "5",
+      "date": "20/10/2019",
+      "title": "Guns N' Roses",
+      "description": "O melhor show de rock.",
+      "price": 200,
+      "place": "São Paulo",
+      "img": "/assets/evento/5/img1.jpeg"
+    },
+    {
+      "id": "6",
+      "date": "20/10/2019",
+      "title": "Maroon 5",
+      "description": "A banda pop de maiores sucessos.",
+      "price": 180,
+      "place": "São Paulo",
+      "img": "/assets/evento/6/img1.jpeg"
+    },
+    {
+      "id": "7",
+      "date": "20/10/2019",
+      "title": "Festival de Rock N' Roll",
+      "description": "O melhor festival de Rock do Brasil.",
+      "price": 130,
+      "place": "Campinas",
+      "img": "/assets/evento/7/img1.jpeg"
+    },
+    {
+      "id": "8",
+      "date": "20/10/2019",
+      "title": "Villa Mix Festival",
+      "description": "O melhor festival sertanejo do Brasil.",
+      "price": 160,
+      "place": "Goiania",
+      "img": "/assets/evento/8/img1.jpg"
+    }
+  ],
+  "order": [
+    {
+      "idBuyer": "1",
+      "numberCard": "asdasdasdasdasdasdsa",
+      "id": 1
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "3321321321321231321321321",
+      "name": "32121",
+      "cod": "321321231",
+      "dateVenc": "321321321321",
+      "items": "dinheiro",
+      "id": 2
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "3214658456985478",
+      "name": "Andrey",
+      "cod": "101",
+      "dateVenc": "10/20",
+      "items": "debito",
+      "id": 3
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "1234555566668888",
+      "name": "Andrey",
+      "cod": "111",
+      "dateVenc": "10/20",
+      "items": "dinheiro",
+      "id": 4
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "asdasdasdasdsaasdasd",
+      "name": "asdasdasd",
+      "cod": "asdasdasd",
+      "dateVenc": "asdasd",
+      "items": "debito",
+      "id": 5
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "321654987987789798987987",
+      "name": "Andrey",
+      "cod": "231654",
+      "dateVenc": "01-02-2019",
+      "formPay": "debito",
+      "items": [
+        {
+          "id": "1",
+          "img": "/assets/evento/1/img1.jpg",
+          "title": "Mandallah",
+          "description": "A melhor festa de música eletrônica do Brasil.",
+          "price": 120,
+          "qtd": 3
+        },
+        {
+          "id": "2",
+          "img": "/assets/evento/2/img1.jpg",
+          "title": "Eapic",
+          "description": "A melhor festa de música country do Brasil.",
+          "price": 120,
+          "qtd": 2
+        }
+      ],
+      "id": 6
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "1236658958744756",
+      "name": "Andrey",
+      "cod": "123",
+      "dateVenc": "10/20",
+      "formPay": "credito",
+      "items": [
+        {
+          "id": "1",
+          "img": "/assets/evento/1/img1.jpeg",
+          "title": "Mandallah",
+          "description": "A melhor festa de música eletrônica do Brasil.",
+          "price": 120,
+          "qtd": 3
+        },
+        {
+          "id": "3",
+          "img": "/assets/evento/3/img1.jpeg",
+          "title": "Melim",
+          "description": "O trio musical do momento.",
+          "price": 70,
+          "qtd": 3
+        }
+      ],
+      "id": 8
+    },
+    {
+      "idBuyer": 2,
+      "numberCard": "3216548798712312312",
+      "name": "asdasdasdadasdasdas",
+      "cod": "321",
+      "dateVenc": "10/20",
+      "formPay": "credito",
+      "items": [
+        {
+          "id": "4",
+          "img": "/assets/evento/4/img1.jpeg",
+          "title": "Oktoberfest",
+          "description": "O festival de celebração das tradições germânicas.",
+          "price": 110,
+          "qtd": 1
+        }
+      ],
+      "id": 9
+    },
+    {
+      "idBuyer": 1,
+      "numberCard": "321654654654654654654654",
+      "name": "Andrey",
+      "cod": "321",
+      "dateVenc": "10/20",
+      "formPay": "credito",
+      "items": [
+        {
+          "id": "2",
+          "img": "/assets/evento/2/img1.jpeg",
+          "title": "Eapic",
+          "description": "A melhor festa de música country do Brasil.",
+          "price": 120,
+          "qtd": 1
+        },
+        {
+          "id": "3",
+          "img": "/assets/evento/3/img1.jpeg",
+          "title": "Melim",
+          "description": "O trio musical do momento.",
+          "price": 70,
+          "qtd": 1
+        }
+      ],
+      "total": 190,
+      "id": 10
+    },
+    {
+      "idBuyer": 3,
+      "numberCard": "25252525252525252522",
+      "name": "Stefani C R Rodrigues",
+      "cod": "112",
+      "dateVenc": "04/22",
+      "formPay": "credito",
+      "items": [
+        {
+          "id": "4",
+          "img": "/assets/evento/4/img1.jpeg",
+          "title": "Oktoberfest",
+          "description": "O festival de celebração das tradições germânicas.",
+          "price": 110,
+          "qtd": 1
+        },
+        {
+          "id": "6",
+          "img": "/assets/evento/6/img1.jpeg",
+          "title": "Maroon 5",
+          "description": "A banda pop de maiores sucessos.",
+          "price": 180,
+          "qtd": 2
+        },
+        {
+          "id": "5",
+          "img": "/assets/evento/5/img1.jpeg",
+          "title": "Guns N' Roses",
+          "description": "O melhor show de rock.",
+          "price": 200,
+          "qtd": 2
+        }
+      ],
+      "total": 870,
+      "id": 11
+    }
+  ]
+}
