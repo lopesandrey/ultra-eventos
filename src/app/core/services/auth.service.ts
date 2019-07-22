@@ -102,7 +102,7 @@ logout(): void {
   window.localStorage.removeItem('AUTH_TOKEN');
   window.localStorage.removeItem('Id_user');
   this._isAuthenticated.next(false);
-  this.router.navigate(['/login']);
+  this.router.navigate(['/home']);
 }
 
 
