@@ -10,6 +10,7 @@ class Order {
         public formPay: string,
         public items: Array<OrderItem>,
         public total: number,
+        public created: Date,
         public id?: number,
     ) { }
 }

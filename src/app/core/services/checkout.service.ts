@@ -59,7 +59,7 @@ export class CheckoutService {
     if (itemEncontrado) {
       itemEncontrado.qtd -= 1;
     }
-    if(itemEncontrado.qtd === 0) {
+    if (itemEncontrado.qtd === 0) {
       this.items.splice(this.items.indexOf(itemEncontrado), 1);
     }
   }

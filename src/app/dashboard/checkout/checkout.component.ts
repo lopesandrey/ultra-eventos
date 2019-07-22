@@ -18,6 +18,8 @@ export class CheckoutComponent implements OnInit {
   idOrder: number;
   idUser = window.localStorage.getItem('Id_user');
   item: OrderItem[] = [];
+  isAuthneticated;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,11 +31,13 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.item = this.cart.showitems();
+    this.authService.isAuthneticated.subscribe((res: boolean) => this.isAuthneticated = res)
+
   }
 
   createForm(): void {
     this.form = this.formBuilder.group({
-      numberCard: ['', [Validators.required, Validators.minLength(16),]],
+      numberCard: ['', [Validators.required, Validators.minLength(16), ]],
       name: ['', [Validators.required, Validators.minLength(5)]],
       cod: ['', [Validators.required, Validators.minLength(3)]],
       dateExp: ['', [Validators.required]],
@@ -51,11 +55,12 @@ export class CheckoutComponent implements OnInit {
       this.form.get('dateExp').markAsTouched();
       this.form.get('formPay').markAsTouched();
 
-    }
-    else {
+    } else {
       if (this.cart.showitems().length === 0) {
         alert('Você não selecionou nenhum item!');
       } else {
+        let created = new Date();
+
         const order: Order = new Order(
           JSON.parse(atob(this.idUser)),
           this.form.value.numberCard,
@@ -64,7 +69,8 @@ export class CheckoutComponent implements OnInit {
           this.form.value.dateExp,
           this.form.value.formPay,
           this.cart.showitems(),
-          this.cart.totalCompras()
+          this.cart.totalCompras(),
+          created
         );
 
         this.purchase.purchase(order)
@@ -78,9 +84,9 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
-  public getToken(): string {
+  /* public getToken(): string {
     return window.localStorage.getItem('AUTH_TOKEN');
-  }
+  } */
 
   public adicionar(item: OrderItem) {
     this.cart.adicionarCar(item);

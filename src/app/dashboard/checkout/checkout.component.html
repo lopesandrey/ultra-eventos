@@ -45,7 +45,7 @@
 
 
 
-    <div *ngIf="getToken() !== null; else gotologin">
+    <div *ngIf="isAuthneticated; else gotologin">
 
       <h5>Dados de Pagamento</h5>
       <hr />
@@ -124,7 +124,7 @@
     </div>
     <ng-template #gotologin>
       <div class="form-row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-        <h5>Faça o login para efetuar suas compras!</h5>
+        <h5>Faça o <a [routerLink]="['/login']">login</a> para efetuar suas compras!</h5>
       </div>
     </ng-template>
     </form>

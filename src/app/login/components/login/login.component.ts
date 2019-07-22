@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
         : this.authService.signUp(this.createAcount.value);
     operation.subscribe(res => {
       this.configs.isLoading = false;
-      const redirect: string = this.authService.redirectUrl  || '/checkout';
+      const redirect: string = this.authService.redirectUrl  || '/home';
       this.router.navigate([redirect]);
       this.authService.redirectUrl = null;
     },

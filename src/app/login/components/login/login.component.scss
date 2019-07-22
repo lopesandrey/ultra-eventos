@@ -6,9 +6,11 @@ $box-shadow-sm: 0 0.15rem 1.75rem 0 rgba(#3a3b45, .15) !default;
   box-shadow: $box-shadow-sm
 }
 .card-title {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 1.5em;
+  font-style: italic;
   font-weight: 600;
+
 
 }
 .alert {
@@ -29,4 +31,17 @@ button.card-link {
   background: transparent;
   color: #3344ff;
   border: none;
+}
+
+input.ng-invalid.ng-touched {
+  border: solid 1px red
+}
+select.ng-invalid.ng-touched {
+  border: solid 1px red
+}
+input.ng-valid.ng-touched {
+  border: solid 1px green
+}
+select.ng-valid.ng-touched {
+  border: solid 1px green
 }

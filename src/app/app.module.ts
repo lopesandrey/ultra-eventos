@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { AlertModule } from 'ngx-bootstrap/alert';
+
 import { LoginModule } from './login/login.module';
 
 
@@ -19,13 +19,12 @@ import { LoginModule } from './login/login.module';
 
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
+
     CoreModule,
     DashboardModule,
     LoginModule,
     AppRoutingModule,
-    AlertModule.forRoot(),
+
 
   ],
   providers: [],

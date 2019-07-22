@@ -47,13 +47,11 @@ export class AuthService {
       headers
   };
 
-    return this.http.post(`${this.URL_API}/login`, JSON.stringify(user),options)
+    return this.http.post(`${this.URL_API}/login`, JSON.stringify(user), options)
     .pipe(
       map((res: any) => {
         this.token = res.accessToken;
-        console.log(this.token);
         this.decodedToken = this.helper.decodeToken(this.token);
-        console.log(this.decodedToken.sub);
         return res;
       }),
       tap((res: any) => this.setAuthState({token: res.accessToken && res.accessToken, isAuthneticated: res !== null}),
@@ -64,7 +62,7 @@ export class AuthService {
     ));
   }
 
-  signUp(user: User): Observable<any>{
+  signUp(user: User): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
@@ -78,7 +76,6 @@ export class AuthService {
 
         this.token = res.accessToken;
         this.decodedToken = this.helper.decodeToken(this.token);
-        console.log(this.decodedToken.sub);
         return res;
 
       }),

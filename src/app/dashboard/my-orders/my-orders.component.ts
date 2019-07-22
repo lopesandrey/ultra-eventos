@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ListingService } from 'src/app/core/services/listing.service';
 import { Order } from 'src/app/shared/order.model';
+import { OrderItem } from 'src/app/shared/item-checkout.model';
 
 @Component({
   selector: 'app-my-orders',
@@ -10,6 +11,7 @@ import { Order } from 'src/app/shared/order.model';
 })
 export class MyOrdersComponent implements OnInit {
   orders: Order[];
+  items: OrderItem[];
   constructor(
     private route: ActivatedRoute,
     private list: ListingService,
@@ -17,7 +19,7 @@ export class MyOrdersComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe((parametros: Params) =>{
+    this.route.params.subscribe((parametros: Params) => {
 
 
       this.list.myOrders(parametros.id)
@@ -25,11 +27,13 @@ export class MyOrdersComponent implements OnInit {
       .then((orders: Order[]) => {
 
         this.orders = orders;
-        console.log(this.orders);
+
       });
 
 
     });
+
+
 
   }
 

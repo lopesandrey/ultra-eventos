@@ -7,7 +7,8 @@ export class Evento {
     public description: string,
     public price: number,
     public place: string,
-    public img: string
+    public img: string,
+    public qtdTicket: number
     ) {}
 
 

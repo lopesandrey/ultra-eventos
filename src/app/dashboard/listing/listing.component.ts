@@ -23,9 +23,8 @@ export class ListingComponent implements OnInit {
   ngOnInit() {
     this.listing.eventListin().subscribe(result => {
       this.evento = result;
-      console.log(this.evento);
     });
-    //this.event = this.listing.eventListin();
+
 
   }
 

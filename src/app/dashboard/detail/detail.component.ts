@@ -13,7 +13,9 @@ import { CheckoutService } from 'src/app/core/services/checkout.service';
 export class DetailComponent implements OnInit {
 
   evento: Evento;
-  isLoading: boolean = false;
+  isLoading = false;
+  add = false;
+
   constructor(
     private route: ActivatedRoute,
     private list: ListingService,
@@ -22,7 +24,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.route.params.subscribe((parametros: Params) =>{
+    this.route.params.subscribe((parametros: Params) => {
       this.isLoading = true;
 
       this.list.detailEvent(parametros.id)
@@ -40,6 +42,6 @@ export class DetailComponent implements OnInit {
 
   additem(evento: Evento) {
     this.cart.includeItem(this.evento);
-
+    this.add = true;
   }
 }

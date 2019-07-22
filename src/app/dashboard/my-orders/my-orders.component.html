@@ -2,27 +2,29 @@
     <div class="d-flex justify-content-center">
       <h2>Meus pedidos</h2>
     </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">N° do pedido</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Forma de pagamento</th>
-        <th scope="col">Valor total</th>
-        <th scope="col">Titulo</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let order of orders ">
-      <tr>
-        <th scope="row">{{order.id}}</th>
-        <td>{{order.name}}</td>
-        <td>{{order.formPay}}</td>
-        <div *ngFor="let item of items ">
-            <td >{{order.items[item.title]}}</td>
-        </div>
-        <td>{{order.total}}</td>
 
-      </tr>
-    </tbody>
-  </table>
+
+    <div class="card" *ngFor="let order of orders " >
+      <div *ngIf="order !== null; else semPedidos">
+        <h5 class="card-header">Número do Pedido: {{order.id}}</h5>
+        <div class="card-body">
+
+          <p class="card-text">Forma de pagamento: {{order.formPay}}</p>
+          <p class="card-text">Data do pedido: {{order.created | date:"dd/MM/yy" }}</p>
+          <p class="card-text">Total do pedido: {{order.total | currency: ['BRL']}}</p>
+          <p class="card-text">Ingressos comprados: </p>
+          <div *ngFor="let orderItem of order.items">
+            <div class="dropdown-divider"></div>
+            <div class="itens">
+              <img class="item"[src]="orderItem.img" alt="">
+              <p class="card-text item">{{orderItem.title }}</p>
+              <p class="card-text item">Quantidade: {{orderItem.qtd }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #semPedidos>
+        <h4>Você não possui compras!</h4>
+    </ng-template>
 </div>
