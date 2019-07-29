@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  isAuthneticated;
   loginForm: FormGroup;
   createAcount: FormGroup;
   public alerts: [{
@@ -38,6 +39,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.createFormC();
+    this.authService.isAuthneticated.subscribe((res: boolean) => this.isAuthneticated = res)
+
   }
 
   createForm(): void {

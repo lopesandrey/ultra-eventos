@@ -8,11 +8,12 @@
 }
 
 .nav-link {
-  color: #C1E4FF
+  color: rgb(255, 193, 193)
 }
 
 .nav-link:hover{
-  color: #FFF
+  color: #FFF;
+  transition: all 0.3s
 }
 
 .banner {

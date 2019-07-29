@@ -38,6 +38,14 @@
       "cpf": "12365478963",
       "celNumber": "19589658745",
       "id": 5
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$664Ubcyr0wyWQb04qDzTLOIFJxSOKCVf6e4TwDbEjkn73r8Y5Fzsi",
+      "name": "andrey",
+      "cpf": "35168498798749874987",
+      "celNumber": "3214569854778",
+      "id": 6
     }
   ],
   "event": [
@@ -471,6 +479,35 @@
       "total": 470,
       "created": "2019-07-21T20:38:08.796Z",
       "id": 20
+    },
+    {
+      "idBuyer": 2,
+      "numberCard": "3135465464654654654654654",
+      "name": "654654654",
+      "cod": "654654654",
+      "dateVenc": "654654654654",
+      "formPay": "credito",
+      "items": [
+        {
+          "id": "1",
+          "img": "/assets/evento/1/img1.jpeg",
+          "title": "Mandallah",
+          "description": "A melhor festa de música eletrônica do Brasil.",
+          "price": 120,
+          "qtd": 1
+        },
+        {
+          "id": "3",
+          "img": "/assets/evento/3/img1.jpeg",
+          "title": "Melim",
+          "description": "O trio musical do momento.",
+          "price": 70,
+          "qtd": 1
+        }
+      ],
+      "total": 190,
+      "created": "2019-07-22T15:05:31.543Z",
+      "id": 21
     }
   ]
 }

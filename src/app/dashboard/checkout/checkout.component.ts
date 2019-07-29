@@ -60,7 +60,6 @@ export class CheckoutComponent implements OnInit {
         alert('Você não selecionou nenhum item!');
       } else {
         let created = new Date();
-
         const order: Order = new Order(
           JSON.parse(atob(this.idUser)),
           this.form.value.numberCard,

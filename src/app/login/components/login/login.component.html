@@ -1,106 +1,87 @@
-<div class="card" style="width: 20rem;">
-  <div class="card-body">
-    <div class="card-title text-danger">
-      {{configs.actionText}}
-      <img class="spinner" src="../../../../assets/spinner.gif" *ngIf="configs.isLoading">
+<div *ngIf="isAuthneticated !== true; else gotohome">
+  <div class="card" style="width: 20rem;">
+    <div class="card-body">
+      <div class="card-title text-danger">
+        {{configs.actionText}}
+        <img class="spinner" src="../../../../assets/spinner.gif" *ngIf="configs.isLoading">
+      </div>
+
+
+      <form [formGroup]="loginForm" (submit)="onSubmit()" *ngIf="configs.isLogin">
+
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
+          <p class="small text-danger text-center" *ngIf="!loginForm.get('email').valid && email.touched"> Digite um email
+            válido</p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Senha" formControlName="password">
+
+          <p class="small text-danger text-center" *ngIf="password.hasError('minlength') && password.touched">A senha deve
+            conter 6 caracteres.</p>
+
+        </div>
+
+        <button type="submit" class="btn btn-danger btn-sm btn-block"
+          [disabled]="loginForm.invalid">{{configs.actionText}}</button>
+        <alert class="alert" type="danger" *ngIf="failed === true" [dismissOnTimeout]="6000">
+          <strong>Usuário ou senha inválida!</strong>
+        </alert>
+      </form>
+
+      <form [formGroup]="createAcount" (submit)="onSubmit()" *ngIf="!configs.isLogin">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Nome" formControlName="name">
+          <p class="small text-danger text-center" *ngIf="name.hasError('minlength') && name.touched"> Digite o seu nome
+            inteiro.</p>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Telefone" formControlName="celNumber">
+          <p class="small text-danger text-center" *ngIf="celNumber.hasError('minlength') && name.touched"> Digite o seu
+            telefone.</p>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="CPF" formControlName="cpf">
+
+          <p class="small text-danger text-center" *ngIf="cpf.hasError('minlength') && cpf.touched">O CPF contem 11
+            números.</p>
+
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
+          <p class="small text-danger text-center" *ngIf="!createAcount.get('email').valid && email.touched"> Digite um
+            email válido</p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Senha" formControlName="password">
+
+          <p class="small text-danger text-center" *ngIf="password.hasError('minlength') && password.touched">A senha deve
+            conter 6 caracteres.</p>
+
+        </div>
+
+        <button type="submit" class="btn btn-danger btn-sm btn-block"
+          [disabled]="createAcount.invalid">{{configs.actionText}}</button>
+      </form>
+      <hr />
+
+      <!--     <p class="small text-danger text-center" >O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.</p>
+  -->
     </div>
+  </div>
 
-
-    <form [formGroup]="loginForm" (submit)="onSubmit()" *ngIf="configs.isLogin">
-
-      <div class="form-group">
-        <input
-          type="email"
-          class="form-control"
-          placeholder="E-mail"
-          formControlName="email"
-        >
-        <p class="small text-danger text-center" *ngIf="!loginForm.get('email').valid && email.touched"> Digite um email válido</p>
-      </div>
-      <div class="form-group">
-        <input
-          type="password"
-          class="form-control"
-          placeholder="Senha"
-          formControlName="password"
-        >
-
-        <p class="small text-danger text-center"  *ngIf="password.hasError('minlength') && password.touched" >A senha deve conter 6 caracteres.</p>
-
-      </div>
-
-      <button type="submit" class="btn btn-danger btn-sm btn-block" [disabled]="loginForm.invalid">{{configs.actionText}}</button>
-      <alert class="alert" type="danger" *ngIf="failed === true" [dismissOnTimeout]="6000" >
-        <strong>Usuário ou senha inválida!</strong>
-      </alert>
-    </form>
-
-    <form [formGroup]="createAcount" (submit)="onSubmit()" *ngIf="!configs.isLogin">
-        <div class="form-group" >
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Nome"
-              formControlName="name"
-            >
-            <p class="small text-danger text-center" *ngIf="name.hasError('minlength') && name.touched"> Digite o seu nome inteiro.</p>
-          </div>
-          <div class="form-group" >
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Telefone"
-              formControlName="celNumber"
-            >
-            <p class="small text-danger text-center" *ngIf="celNumber.hasError('minlength') && name.touched"> Digite o seu telefone.</p>
-          </div>
-          <div class="form-group" >
-            <input
-              type="text"
-              class="form-control"
-              placeholder="CPF"
-              formControlName="cpf"
-            >
-
-            <p class="small text-danger text-center"  *ngIf="cpf.hasError('minlength') && cpf.touched" >O CPF contem 11 números.</p>
-
-          </div>
-
-      <div class="form-group">
-        <input
-          type="email"
-          class="form-control"
-          placeholder="E-mail"
-          formControlName="email"
-        >
-        <p class="small text-danger text-center" *ngIf="!createAcount.get('email').valid && email.touched"> Digite um email válido</p>
-      </div>
-      <div class="form-group">
-        <input
-          type="password"
-          class="form-control"
-          placeholder="Senha"
-          formControlName="password"
-        >
-
-        <p class="small text-danger text-center"  *ngIf="password.hasError('minlength') && password.touched" >A senha deve conter 6 caracteres.</p>
-
-      </div>
-
-      <button type="submit" class="btn btn-danger btn-sm btn-block" [disabled]="createAcount.invalid">{{configs.actionText}}</button>
-    </form>
-    <hr />
-
-<!--     <p class="small text-danger text-center" >O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.</p>
- -->
+  <div class="card" style="width: 20rem;">
+    <div class="card-body">
+      <p class="card-text">
+        {{configs.alreadyC}}
+      </p>
+      <button class="card-link" (click)="changeAction()">{{configs.buttonActionText}}</button>
+    </div>
   </div>
 </div>
-
-<div class="card" style="width: 20rem;">
-  <div class="card-body">
-    <p class="card-text">
-      {{configs.alreadyC}}
-    </p>
-    <button  class="card-link" (click)="changeAction()">{{configs.buttonActionText}}</button>
+<ng-template #gotohome>
+  <div class="form-row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+    <h5>Você ja está logado, aproveite as ofertas!</h5>
   </div>
-</div>
+</ng-template>
